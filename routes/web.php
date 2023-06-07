@@ -14,5 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.principal');
 });
+
+
+
+Route::get('/Admin', [App\Http\Controllers\HomeController::class, 'op'])->name('op');
+
+Route::get('/Profesor', [App\Http\Controllers\HomeController::class, 'Profesor'])->name('Profesor');
+
+Route::get('/Alumno', [App\Http\Controllers\HomeController::class, 'Alumno'])->name('Alumno');
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'Inicio'])->name('Inicio');
+
+
